@@ -1,0 +1,26 @@
+    cv::Mat rotationMatrix = transformationMatrix(cv::Rect(0, 0, 3, 3));
+
+    // Convert the rotation matrix to Euler angles (RPY)
+    cv::Vec3d rpy;
+    cv::Matx33d rotationMatrix3x3;
+    rotationMatrix.convertTo(rotationMatrix3x3, CV_64F);
+
+    cv::Mat eulerAngles;
+    cv::Rodrigues(rotationMatrix3x3, eulerAngles);
+    eulerAngles *= 180.0 / CV_PI;  // Convert radians to degrees
+
+    rpy[0] = eulerAngles.at<double>(2);  // Yaw
+    rpy[1] = eulerAngles.at<double>(1);  // Pitch
+    rpy[2] = eulerAngles.at<double>(0);  // Roll
+
+
+
+
+
+
+
+    cv::Vec3d translationVector = cv::Vec3d(
+        transformationMatrix.at<double>(3, 0),
+        transformationMatrix.at<double>(3, 1),
+        transformationMatrix.at<double>(3, 2)
+    );

@@ -1,0 +1,7 @@
+package lcmTypes;
+
+struct vio_t
+{
+    float rot [3][3];
+    float pos [3];
+}

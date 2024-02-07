@@ -1,0 +1,7 @@
+package lcmTypes;
+
+struct vio_cartesian_t
+{
+    double rot [3];
+    double pos [3];
+}
