@@ -1,5 +1,6 @@
 #!/bin/bash
-apt-get install  -y  git python3-pip python-is-python3 cmake
+sudo apt update -y && sudo apt upgrade -y
+sudo apt-get install  -y  git python3-pip python-is-python3 cmake gcc g++ libopencv-dev libeigen3-dev
 mkdir ~/tools/
 cd ~/tools/
 git clone https://github.com/MrAsana/Intuitive_Control.git
