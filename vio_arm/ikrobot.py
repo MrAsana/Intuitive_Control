@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 Stéphane Caron
 
-"""Kinova Gen2 arm tracking a moving target."""
 import os
 
 import pinocchio
