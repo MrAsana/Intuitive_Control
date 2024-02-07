@@ -12,7 +12,7 @@ cmake -DCPP11_NO_BOOST=1 ..
 make
 
 
-bash ~/tools/install-realsense.sh
+bash ~/tools/Intuitive_Control/install-realsense.sh
 
 cd ~/tools/Intuitive_Control/lcm
 mkdir build
@@ -34,6 +34,6 @@ pip install -r requirements.txt
 
 
 
-bash ~/tools/install-pinocchio.sh
+bash ~/tools/Intuitive_Control/install-pinocchio.sh
 
 
