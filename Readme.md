@@ -10,7 +10,9 @@ Intel Realsense D435i
 
 Amber L1 ( Its main control box is in the same LAN as your computer ) 
 
-4 cores + 8GB memory and above 
+32GB memory and above 
+
+(**Warning: Low memory may cause compilation failure. Increasing swap space or reducing the number of threads compiled at the same time is a possible solution..**)
 
 Internet connection
 
@@ -87,4 +89,18 @@ All dependencies, i.e. files, will be installed into ~/tools/
    Please move the camera slowly and the robotic arm will move accordingly. Please be careful of any possible collisions.
 
    
+
+## Trouble Shooting
+
+##### Killed signal terminated program cc1plus
+
+This situation is most likely caused by low memory. You can try to increase the swap space or reduce the number of threads compiled at the same time. One of the methods is introduced below.
+
+- Reduce the number of threads compiling simultaneously
+
+  ```
+  nano ~/tools/Intuitive_Control/ORB_SLAM3/build.sh
+  ```
+
+  Change the last line "make -j" to "make -j1" or "make -j2"
 
