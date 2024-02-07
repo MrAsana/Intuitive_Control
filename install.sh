@@ -1,5 +1,5 @@
 #!/bin/bash
-
+apt-get -y install git python3-pip python-is-python3
 mkdir ~/tools/
 cd ~/tools/
 git clone https://github.com/MrAsana/Intuitive_Control.git
