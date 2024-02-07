@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update && sudo apt upgrade
-sudo apt-get install  -y  git python3-pip python-is-python3 cmake gcc g++ libopencv-dev build-essential libglib2.0-dev libeigen3-dev net-tools
+sudo apt-get install  -y  git python3-pip python-is-python3 cmake gcc g++ libopencv-dev build-essential libglib2.0-dev libeigen3-dev net-tools libgl1-mesa-dev libegl1-mesa-dev libglew-dev
 mkdir ~/tools/
 cd ~/tools/
 git clone https://github.com/MrAsana/Intuitive_Control.git
