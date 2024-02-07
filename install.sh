@@ -32,16 +32,10 @@ sudo make install
 cd ~/tools/Intuitive_Control/ORB_SLAM3
 sudo chmod +x build.sh
 ./build.sh
-cd ~/tools/ORB_SLAM3/Thirdparty/Sophus/build/
+cd ~/tools/Intuitive_Control/ORB_SLAM3/Thirdparty/Sophus/build/
 sudo make install
 
 echo 'export LD_LIBRARY_PATH=~/tools/Pangolin/build/src/:~/tools/ORB_SLAM3/Thirdparty/DBoW2/lib:~/tools/ORB_SLAM3/Thirdparty/g2o/lib:~/tools/ORB_SLAM3/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 
 cd ~/tools/Intuitive_Control/vio_arm
 pip install -r requirements.txt
-
-
-
-bash ~/tools/Intuitive_Control/install-pinocchio.sh
-
-

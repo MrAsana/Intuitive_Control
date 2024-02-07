@@ -57,9 +57,23 @@ All dependencies, i.e. files, will be installed into ~/tools/
       export LCM_DEFAULT_URL=udpm://239.255.76.67:7667?ttl=10
       ```
 
+      Alternatively, if you want to persist this configuration, add it to ~/.bashrc
+
    4. Use ssh to log in to the control box and repeat the above operations
 
+      Note that you may need to restart the control program after configuring the parameters.
+
+      ```bash
+      sudo killall amber_core
+      cd amber_core_7
+      ./amber_core
+      ```
+
+      
+
 3. Run visualization and communication scripts
+
+   **If the terminal that starts this python script does not have LCM_DEFAULT_URL configured, the program may not be able to communicate with the remote robotic arm.**
 
    ```bash
    python ~/tools/Intuitive_Control/vio_arm/main.py
@@ -84,7 +98,7 @@ All dependencies, i.e. files, will be installed into ~/tools/
 
    
 
-4. Use intuitive control
+5. Use intuitive control
 
    Please move the camera slowly and the robotic arm will move accordingly. Please be careful of any possible collisions.
 
@@ -103,4 +117,21 @@ This situation is most likely caused by low memory. You can try to increase the 
   ```
 
   Change the last line "make -j" to "make -j1" or "make -j2"
+
+##### About virtual machines
+
+It may not be available under the virtual machine because `-march=native` is set in some CMakeLists.txt. You can try to delete these parameters, but this method has not been tested yet.
+
+##### Camera connection issues
+
+- Please be sure to use a cable that complies with the USB3.0 specification.
+- Camera status can be checked using the `realsense-viewer`  command.
+
+##### Waiting for images
+
+Try holding the camera in your hand and shaking it slightly to change the captured image.
+
+##### The robot arm moves in a different direction than expected
+
+The direction detected by the VIO system is related to the attitude at startup. Try to face different directions at startup (especially the relative attitude between the robot arm and the robot arm at startup).
 
