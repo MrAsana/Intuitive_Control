@@ -135,3 +135,26 @@ Try holding the camera in your hand and shaking it slightly to change the captur
 
 The direction detected by the VIO system is related to the attitude at startup. Try to face different directions at startup (especially the relative attitude between the robot arm and the robot arm at startup).
 
+## Special thanks
+
+This project is inseparable from the support of the following open source projects
+
+[pink](https://github.com/stephane-caron/pink)
+
+[lcm](https://github.com/lcm-proj/lcm)
+
+[ORB_SLAM3](https://github.com/UZ-SLAMLab/ORB_SLAM3)
+
+[Pangolin](https://github.com/stevenlovegrove/Pangolin)
+
+[g2o](https://github.com/RainerKuemmerle/g2o)
+
+[Sophus](https://github.com/strasdat/Sophus)
+
+[DBoW2](https://github.com/dorian3d/DBoW2)
+
+## Contact information
+
+This project is currently maintained by Amber Robotics Dev Team.
+
+Buy the amber L1 robotic arm at [Amberobotics](https://shop.amberobotics.com/) .
