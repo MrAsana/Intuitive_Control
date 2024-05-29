@@ -2,6 +2,22 @@
 
 For the sake of environmental consistency, we recommend starting with a fresh installation of Ubuntu 22.04, but you can also choose to resolve dependency conflicts yourself.
 
+## Latest changes
+
+For amber_core after 0.1.0, you may need to change `vioarm/ik_robot`, and define the corresponding LCM channel in your configuration file on line 32. We believe that this modification is necessary to prevent channel conflicts in batch deployments.
+
+```python
+def lcmOut(q):
+    msg = posCmd_t()
+    for i in range(7):
+        msg.jointTarget[i] = q[i]*57.29
+
+    lc = lcm.LCM()
+    lc.publish("L1_PosCmd", msg.encode()) #change me
+```
+
+
+
 ## Recommendation system requirements
 
 Ubuntu 22.04 Jammy
