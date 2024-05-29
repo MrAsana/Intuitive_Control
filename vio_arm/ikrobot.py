@@ -29,7 +29,7 @@ def lcmOut(q):
         msg.jointTarget[i] = q[i]*57.29
 
     lc = lcm.LCM()
-    lc.publish("L1_PosCmd", msg.encode())
+    lc.publish("Amber_PosCmd", msg.encode())
 
 def solveMyIK():
 
