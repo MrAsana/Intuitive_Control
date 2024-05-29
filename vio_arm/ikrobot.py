@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 Stéphane Caron
 
+"""Kinova Gen2 arm tracking a moving target."""
 import os
 
 import pinocchio
@@ -19,15 +20,16 @@ from pink import solve_ik
 from pink.tasks import FrameTask, PostureTask
 from pink.utils import custom_configuration_vector
 from pink.visualization import start_meshcat_visualizer
-from lcmTypes import rosCommand_t
+#from lcmTypes import rosCommand_t
+from lcmTypes.posCmd_t import posCmd_t
 import meshcat_shapes
 def lcmOut(q):
-    msg = rosCommand_t()
+    msg = posCmd_t()
     for i in range(7):
         msg.jointTarget[i] = q[i]*57.29
 
     lc = lcm.LCM()
-    lc.publish("RosCommand", msg.encode())
+    lc.publish("L1_PosCmd", msg.encode())
 
 def solveMyIK():
 
