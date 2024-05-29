@@ -65,7 +65,7 @@ def my_handler(channel, data):
     for i in range(3):
         bridge.now.position[i] = msg.pos[i]+bridge.absolute.position[i]
         bridge.now.rotation[i] = msg.rot[i]+bridge.absolute.rotation[i]
-    print(bridge.now.position[0], bridge.now.position[1], bridge.now.position[2])
+    #print(bridge.now.position[0], bridge.now.position[1], bridge.now.position[2])
 
 
 
